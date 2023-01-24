@@ -20,5 +20,9 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
         }
 
+        public List<ItemEntity> GetItemEntity()
+        {
+            return _serviceContext.Set<ItemEntity>().ToList();
+        }
     }
 }

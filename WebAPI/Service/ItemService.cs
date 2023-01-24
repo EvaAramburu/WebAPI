@@ -17,5 +17,13 @@ namespace WebAPI.Service
             _itemLogic.InsertItemEntity(itemEntity);
             return itemEntity.Id;
         }
+
+        public List<ItemEntity> GetItemEntity()
+        {
+            //var resultList = _itemLogic.GetItemEntity();
+            //return resultList;
+
+            return _itemLogic.GetItemEntity();
+        }
     }
 }

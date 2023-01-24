@@ -21,10 +21,14 @@ namespace Data
             builder.Entity<ItemEntity>(entity =>
             {
                 entity.ToTable("Items");
+
             });
             builder.Entity<OrderEntity>(entity =>
             {
-                entity.ToTable("Orders");
+                entity.ToTable("Orders")
+                .HasOne<ItemEntity>()
+                .WithMany()
+                .HasForeignKey(o => o.ProductId);
             });
             builder.Entity<UserEntity>(entity =>
             {

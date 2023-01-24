@@ -1,6 +1,9 @@
-﻿namespace WebAPI.IService
+﻿using Entities.Entities;
+
+namespace WebAPI.IService
 {
-    public class IOrderService
+    public interface IOrderService
     {
+        int InsertOrder(OrderEntity order);
     }
 }

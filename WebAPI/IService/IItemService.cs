@@ -1,6 +1,9 @@
-﻿namespace WebAPI.IService
+﻿using Entities.Entities;
+
+namespace WebAPI.IService
 {
-    public class IItemService
+    public interface IItemService
     {
+        int InsertItemEntity(ItemEntity itemEntity);
     }
 }

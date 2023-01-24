@@ -1,6 +1,9 @@
-﻿namespace WebAPI.IService
+﻿using Entities.Entities;
+
+namespace WebAPI.IService
 {
-    public class IUserService
+    public interface IUserService
     {
+        int InsertUser(UserEntity user);
     }
 }

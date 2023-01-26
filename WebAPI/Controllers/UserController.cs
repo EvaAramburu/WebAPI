@@ -24,9 +24,9 @@ namespace WebAPI.Controllers
         }
         [HttpGet(Name = "GetUsers")]
 
-        public List<UserEntity> GetUsers()
+        public List<UserEntity> GetAllUsers()
         {
-            return _userService.GetUsers();
+            return _userService.GetAllUsers();
         }
     }
 }

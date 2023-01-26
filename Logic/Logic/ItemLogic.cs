@@ -20,7 +20,7 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
         }
 
-        public List<ItemEntity> GetItemEntity()
+        public List<ItemEntity> GetAllItems()
         {
             //FUNCIONAMIENTO DEL MÉTODO
             return _serviceContext.Set<ItemEntity>().ToList();

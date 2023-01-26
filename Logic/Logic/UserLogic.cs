@@ -19,7 +19,7 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
         }
 
-        List<UserEntity> IUserLogic.GetUsers()
+        List<UserEntity> IUserLogic.GetAllUsers()
         {
             return _serviceContext.Set<UserEntity>().ToList();
         }

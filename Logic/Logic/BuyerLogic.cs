@@ -17,5 +17,10 @@ namespace Logic.Logic
             _serviceContext.Buyers.Add(buyer);
             _serviceContext.SaveChanges();
         }
+
+        List<BuyerEntity> IBuyerLogic.GetBuyers()
+        {
+            return _serviceContext.Set<BuyerEntity>().ToList();
+        }
     }
 }

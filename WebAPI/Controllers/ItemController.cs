@@ -26,7 +26,7 @@ namespace WebAPI.Controllers
         [HttpGet(Name = "GetItemEntity")]
         public List<ItemEntity> Get()
         {
-            return _itemService.GetItemEntity();
+            return _itemService.GetAllItems();
         }
      }
 

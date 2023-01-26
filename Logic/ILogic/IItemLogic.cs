@@ -10,7 +10,7 @@ namespace Logic.ILogic
     public interface IItemLogic
     {
         void InsertItemEntity(ItemEntity itemEntity);
-        List<ItemEntity> GetItemEntity();
+        List<ItemEntity> GetAllItems();
 
     }
 }

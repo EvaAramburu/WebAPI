@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Logic.ILogic
 {
-    public interface IItemLogic
+    public interface IBuyerLogic
     {
-        void InsertItemEntity(ItemEntity itemEntity);
-        List<ItemEntity> GetItemEntity();
-
+        void InsertBuyer(BuyerEntity buyer);
     }
 }

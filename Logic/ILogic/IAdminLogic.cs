@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Logic.ILogic
 {
-    public interface IItemLogic
+    public interface IAdminLogic
     {
-        void InsertItemEntity(ItemEntity itemEntity);
-        List<ItemEntity> GetItemEntity();
-
+        void InsertAdmin(AdminEntity admin);
+        List<AdminEntity> GetAdmin();
     }
 }

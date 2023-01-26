@@ -16,6 +16,8 @@ namespace Data
         public DbSet<ItemEntity> Items { get; set; }
         public DbSet<OrderEntity> Orders { get; set; }
         public DbSet<UserEntity> Users { get; set; }
+        public DbSet<AdminEntity> Admins { get; set; }
+        public DbSet<BuyerEntity> Buyers { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<ItemEntity>(entity =>
@@ -25,14 +27,22 @@ namespace Data
             });
             builder.Entity<OrderEntity>(entity =>
             {
-                entity.ToTable("Orders")
-                .HasOne<ItemEntity>()
-                .WithMany()
-                .HasForeignKey(o => o.ProductId);
+                entity.ToTable("Orders");
+
             });
             builder.Entity<UserEntity>(entity =>
             {
                 entity.ToTable("Users");
+            });
+            builder.Entity<AdminEntity>(entity =>
+            {
+                entity.ToTable("Admins");
+
+            });
+            builder.Entity<BuyerEntity>(entity =>
+            {
+                entity.ToTable("Buyers");
+
             });
         }
 

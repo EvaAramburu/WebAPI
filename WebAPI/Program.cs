@@ -5,6 +5,7 @@ using Logic.ILogic;
 using Logic.Logic;
 using Microsoft.EntityFrameworkCore;
 using Data;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,14 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IItemLogic, ItemLogic>();
 builder.Services.AddScoped<IItemService, ItemService>();
+builder.Services.AddScoped<IUserLogic, UserLogic>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IOrderLogic, OrderLogic>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IAdminLogic, AdminLogic>();
+builder.Services.AddScoped<IAdminService, AdminService>();
+builder.Services.AddScoped<IBuyerLogic, BuyerLogic>();
+builder.Services.AddScoped<IBuyerService, BuyerService>();
 
 builder.Services.AddDbContext<ServiceContext>(
         options => options.UseSqlServer("name=ConnectionStrings:ServiceContext"));

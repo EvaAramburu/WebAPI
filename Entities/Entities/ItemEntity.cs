@@ -1,6 +1,7 @@
 ﻿using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,12 @@ namespace Entities.Entities
             IsActive = true; 
             IsPublic = true; 
         }
+
     public int Id { get; set; }
     public Guid IdWeb { get; set; }
     public string Name { get; set; }
+    public int Weight { get; set; }
+    public string Scent { get; set; }
     public string Brand { get; set; }
     public int Stock { get; set; }
     private DateTime InsertDate { get; set; }
@@ -24,5 +28,6 @@ namespace Entities.Entities
     public bool IsActive { get; private set; }
     public bool IsPublic { get; private set; }
     public decimal RawPrice { get; set; }
+
     }
 }

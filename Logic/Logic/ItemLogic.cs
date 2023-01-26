@@ -22,7 +22,21 @@ namespace Logic.Logic
 
         public List<ItemEntity> GetItemEntity()
         {
+            //FUNCIONAMIENTO DEL MÉTODO
             return _serviceContext.Set<ItemEntity>().ToList();
+
+
+            //EJEMPLOS CÓDIGO. VER LINQ. NO VAN ACÁ
+
+            //filtra
+            //var selectedItems = _serviceContext.Set<ItemEntity>().Where(i => i.IsActive).ToList();
+
+            //trae el primero
+            var firstItem = _serviceContext.Set<ItemEntity>().First();
+            firstItem.Brand = "Sasasasa";
+
+            //lo modifica
+            _serviceContext.SaveChanges();
         }
     }
 }

@@ -19,9 +19,9 @@ namespace WebAPI.Service
             return admin.Id;
         }
 
-        public List<AdminEntity> GetAdmin()
+        public List<AdminEntity> GetAdmins()
         {
-            return _adminLogic.GetAdmin();
+            return _adminLogic.GetAdmins();
         }
     }
 }

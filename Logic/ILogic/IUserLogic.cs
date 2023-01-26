@@ -10,5 +10,6 @@ namespace Logic.ILogic
     public interface IUserLogic
     {
         void InsertUser(UserEntity user);
+        List<UserEntity> GetUsers();
     }
 }

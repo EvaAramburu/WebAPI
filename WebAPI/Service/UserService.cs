@@ -17,5 +17,9 @@ namespace WebAPI.Service
             _userLogic.InsertUser(user);
             return user.Id;
         }
+        public List<UserEntity> GetUsers()
+        {
+            return _userLogic.GetUsers();
+        }
     }
 }

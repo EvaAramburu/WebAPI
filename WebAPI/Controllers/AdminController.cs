@@ -23,10 +23,10 @@ namespace WebAPI.Controllers
             return _adminService.InsertAdmin(admin);
         }
 
-        [HttpGet(Name = "GetAdmin")]
-        public List<AdminEntity> Get()
+        [HttpGet(Name = "GetAdmins")]
+        public List<AdminEntity> GetAdmins()
         {
-            return _adminService.GetAdmin();
+            return _adminService.GetAdmins();
         }
     }
 }

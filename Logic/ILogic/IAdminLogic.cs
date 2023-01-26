@@ -10,6 +10,6 @@ namespace Logic.ILogic
     public interface IAdminLogic
     {
         void InsertAdmin(AdminEntity admin);
-        List<AdminEntity> GetAdmin();
+        List<AdminEntity> GetAdmins();
     }
 }

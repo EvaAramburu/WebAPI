@@ -17,5 +17,10 @@ namespace WebAPI.Service
             _buyerLogic.InsertBuyer(buyer);
             return buyer.Id;
         }
+
+        List<BuyerEntity> IBuyerService.GetAllBuyers()
+        {
+            return _buyerLogic.GetAllBuyers();
+        }
     }
 }

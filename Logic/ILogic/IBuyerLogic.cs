@@ -10,5 +10,6 @@ namespace Logic.ILogic
     public interface IBuyerLogic
     {
         void InsertBuyer(BuyerEntity buyer);
+        List<BuyerEntity> GetAllBuyers();
     }
 }

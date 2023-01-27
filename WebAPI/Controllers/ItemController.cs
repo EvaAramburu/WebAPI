@@ -5,7 +5,7 @@ using WebAPI.IService;
 namespace WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")] 
+    [Route("[controller]/[action]")] 
     public class ItemController : ControllerBase
     {
         private readonly ILogger<ItemController> _logger;
@@ -23,10 +23,10 @@ namespace WebAPI.Controllers
             return _itemService.InsertItemEntity(itemEntity);
         }
 
-        [HttpGet(Name = "GetItemEntity")]
-        public List<ItemEntity> Get()
+        [HttpGet(Name = "GetAllItems")]
+        public List<ItemEntity> GetAllItems()
         {
-            return _itemService.GetItemEntity();
+            return _itemService.GetAllItems();
         }
      }
 

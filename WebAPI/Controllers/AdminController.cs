@@ -5,7 +5,7 @@ using WebAPI.IService;
 namespace WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class AdminController : ControllerBase
     {
         private readonly ILogger<AdminController> _logger;

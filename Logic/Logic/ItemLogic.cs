@@ -20,7 +20,7 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
         }
 
-        public List<ItemEntity> GetItemEntity()
+        public List<ItemEntity> GetAllItems()
         {
             //FUNCIONAMIENTO DEL MÉTODO
             return _serviceContext.Set<ItemEntity>().ToList();
@@ -32,11 +32,11 @@ namespace Logic.Logic
             //var selectedItems = _serviceContext.Set<ItemEntity>().Where(i => i.IsActive).ToList();
 
             //trae el primero
-            var firstItem = _serviceContext.Set<ItemEntity>().First();
-            firstItem.Brand = "Sasasasa";
+            //var firstItem = _serviceContext.Set<ItemEntity>().First();
+            //firstItem.Brand = "Sasasasa";
 
             //lo modifica
-            _serviceContext.SaveChanges();
+            //_serviceContext.SaveChanges();
         }
     }
 }

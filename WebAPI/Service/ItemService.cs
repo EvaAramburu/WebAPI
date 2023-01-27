@@ -18,12 +18,12 @@ namespace WebAPI.Service
             return itemEntity.Id;
         }
 
-        public List<ItemEntity> GetItemEntity()
+        public List<ItemEntity> GetAllItems()
         {
             //var resultList = _itemLogic.GetItemEntity();
             //return resultList;
 
-            return _itemLogic.GetItemEntity();
+            return _itemLogic.GetAllItems();
         }
     }
 }

@@ -18,5 +18,10 @@ namespace WebAPI.Service
             _orderLogic.InsertOrder(order);
             return order.Id;
         }
+
+        List<OrderEntity> IOrderService.GetAllOrders()
+        {
+            return _orderLogic.GetAllOrders();
+        }
     }
 }

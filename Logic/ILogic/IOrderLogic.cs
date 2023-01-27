@@ -10,5 +10,6 @@ namespace Logic.ILogic
     public interface IOrderLogic
     {
         void InsertOrder(OrderEntity order);
+        List<OrderEntity> GetAllOrders();
     }
 }

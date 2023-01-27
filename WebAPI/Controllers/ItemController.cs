@@ -23,8 +23,8 @@ namespace WebAPI.Controllers
             return _itemService.InsertItemEntity(itemEntity);
         }
 
-        [HttpGet(Name = "GetItemEntity")]
-        public List<ItemEntity> Get()
+        [HttpGet(Name = "GetAllItems")]
+        public List<ItemEntity> GetAllItems()
         {
             return _itemService.GetAllItems();
         }

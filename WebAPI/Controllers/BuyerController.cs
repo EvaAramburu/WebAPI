@@ -5,7 +5,7 @@ using WebAPI.IService;
 namespace WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class BuyerController : ControllerBase 
     {
         private readonly ILogger<BuyerController> _logger;
@@ -17,7 +17,7 @@ namespace WebAPI.Controllers
             _buyerService = buyerService;
         }
 
-        [HttpPost(Name = "Insert Buyer")]
+        [HttpPost(Name = "InsertBuyer")]
 
         public int Post([FromBody] BuyerEntity buyer) 
         { 

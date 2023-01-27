@@ -5,6 +5,6 @@ namespace WebAPI.IService
     public interface IAdminService
     {
         int InsertAdmin(AdminEntity admin);
-        List<AdminEntity> GetAdmins();
+        List<AdminEntity> GetAllAdmins();
     }
 }

@@ -18,7 +18,7 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
         }
 
-        List<BuyerEntity> IBuyerLogic.GetBuyers()
+        List<BuyerEntity> IBuyerLogic.GetAllBuyers()
         {
             return _serviceContext.Set<BuyerEntity>().ToList();
         }

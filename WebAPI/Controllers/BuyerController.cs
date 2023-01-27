@@ -26,9 +26,9 @@ namespace WebAPI.Controllers
 
         [HttpGet(Name = "GetBuyer")]
 
-        public List<BuyerEntity> Get()
+        public List<BuyerEntity> GetAllBuyers()
         {
-            return _buyerService.GetBuyers();
+            return _buyerService.GetAllBuyers();
         }
     }
 }

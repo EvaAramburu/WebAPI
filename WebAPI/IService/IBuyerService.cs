@@ -5,6 +5,6 @@ namespace WebAPI.IService
     public interface IBuyerService
     {
         int InsertBuyer(BuyerEntity buyer);
-        List<BuyerEntity> GetBuyers();
+        List<BuyerEntity> GetAllBuyers();
     }
 }

@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
             return _buyerService.InsertBuyer(buyer);
         }
 
-        [HttpGet(Name = "GetBuyer")]
+        [HttpGet(Name = "GetAllBuyers")]
 
         public List<BuyerEntity> GetAllBuyers()
         {

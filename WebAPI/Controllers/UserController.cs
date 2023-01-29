@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet(Name = "GetSelectedUser")]
-        public List<UserEntity> GetSelectedUser([FromQuery] UserFilter userFilter)
+        public List<UserEntity> GetSelectedUser([FromQuery] int id)
         {
             //var selectedItems = _serviceContext.Set<ItemEntity>().Where(i => i.IsActive).ToList();
 
@@ -40,7 +40,7 @@ namespace WebAPI.Controllers
             //if (validCredentials == true)
             //{
 
-            return _userService.GetSelectedUser(userFilter);
+            return _userService.GetSelectedUser(id);
             //}
             //else
             //{
@@ -66,7 +66,13 @@ namespace WebAPI.Controllers
             //}
         }
 
-       
+        [HttpDelete(Name = "DeleteUser")]
+
+        public void DeleteUser([FromQuery] int id)
+        {
+            _userService.DeleteUser(id);
+
+        }
 
         
     }

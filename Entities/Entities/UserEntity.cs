@@ -22,7 +22,7 @@ namespace Entities.Entities
         public DateTime AddedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
         public bool IsActive { get; set; }
-        public int Rol { get; private set; }
+        public int Rol { get; set; }
         private string Password { get; set; }
         private string EncryptedPassword { get; set; }
         

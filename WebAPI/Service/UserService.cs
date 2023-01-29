@@ -23,14 +23,17 @@ namespace WebAPI.Service
             return _userLogic.GetAllUsers();
         }
 
-        public List<UserEntity> GetSelectedUser(UserFilter userFilter)
+        public List<UserEntity> GetSelectedUser(int id)
         {
-            return _userLogic.GetSelectedUser(userFilter);
+            return _userLogic.GetSelectedUser(id);
         }
         public void DeactivateUser(int id)
         {
             _userLogic.DeactivateUser(id);
         }
-
+        public void DeleteUser(int id)
+        {
+            _userLogic.DeleteUser(id);
+        }
     }
 }

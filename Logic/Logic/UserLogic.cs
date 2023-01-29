@@ -5,6 +5,7 @@ using Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,11 +26,13 @@ namespace Logic.Logic
             return _serviceContext.Set<UserEntity>().ToList();
         }
 
-        List<UserEntity> IUserLogic.GetSelectedUser(UserFilter userFilter)
+        List<UserEntity> IUserLogic.GetSelectedUser(int id)
         {
-            var selection = _serviceContext.Set<UserEntity>();
+            var selection = _serviceContext.Set<UserEntity>()
+                .Where(u => u.Id == id).ToList();
+            return selection;
 
-            return selection.ToList();
+
         }
 
         void IUserLogic.DeactivateUser(int id)
@@ -40,6 +43,15 @@ namespace Logic.Logic
             userToDeactivate.IsActive = false;
 
             _serviceContext.SaveChanges();
+        }
+        void IUserLogic.DeleteUser(int id)
+        {
+            //var userToDelete = _serviceContext.Set<UserEntity>().Where(u => u.Id == id).First();
+
+            _serviceContext.Users.Remove(_serviceContext.Set<UserEntity>().Where(u => u.Id == id).First());
+           
+            _serviceContext.SaveChanges();
+
         }
     }
 }

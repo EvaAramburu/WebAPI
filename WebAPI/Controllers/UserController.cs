@@ -18,14 +18,14 @@ namespace WebAPI.Controllers
             _logger = logger;
             _userService = userService;
         }
-        [HttpPost(Name = "InsertUser")]
 
+        [HttpPost(Name = "InsertUser")]
         public int Post([FromBody] UserEntity user)
         {
             return _userService.InsertUser(user);
         }
 
-        [HttpGet(Name = "GetUsers")]
+        [HttpGet(Name = "GetAllUsers")]
         public List<UserEntity> GetAllUsers()
         {
             return _userService.GetAllUsers();
@@ -65,6 +65,8 @@ namespace WebAPI.Controllers
             //throw new InvalidCredentialException();
             //}
         }
+
+       
 
         
     }

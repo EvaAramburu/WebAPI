@@ -19,7 +19,7 @@ namespace WebAPI.Service
             return order.Id;
         }
 
-        List<OrderEntity> IOrderService.GetAllOrders()
+        public List<OrderEntity> GetAllOrders()
         {
             return _orderLogic.GetAllOrders();
         }

@@ -18,7 +18,7 @@ namespace WebAPI.Service
             return buyer.Id;
         }
 
-        public List<BuyerEntity> GetAllBuyers()
+        List<BuyerEntity> IBuyerService.GetAllBuyers()
         {
             return _buyerLogic.GetAllBuyers();
         }

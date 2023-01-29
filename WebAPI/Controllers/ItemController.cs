@@ -5,7 +5,7 @@ using WebAPI.IService;
 namespace WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")] 
+    [Route("[controller]/[action]")] 
     public class ItemController : ControllerBase
     {
         private readonly ILogger<ItemController> _logger;

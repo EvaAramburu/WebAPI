@@ -18,10 +18,11 @@ namespace Logic.Logic
                 _serviceContext.Orders.Add(order);
                 _serviceContext.SaveChanges();
             }
-        List<OrderEntity> IOrderLogic.GetAllOrders()
-        {
-            return _serviceContext.Set<OrderEntity>().ToList();
-        }    
-        }
+
+            List<OrderEntity> IOrderLogic.GetAllOrders()
+            {
+                return _serviceContext.Set<OrderEntity>().ToList();
+            }
+    }
  }
 

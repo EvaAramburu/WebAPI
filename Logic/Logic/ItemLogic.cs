@@ -32,11 +32,11 @@ namespace Logic.Logic
             //var selectedItems = _serviceContext.Set<ItemEntity>().Where(i => i.IsActive).ToList();
 
             //trae el primero
-            var firstItem = _serviceContext.Set<ItemEntity>().First();
-            firstItem.Brand = "Sasasasa";
+            //var firstItem = _serviceContext.Set<ItemEntity>().First();
+            //firstItem.Brand = "Sasasasa";
 
             //lo modifica
-            _serviceContext.SaveChanges();
+            //_serviceContext.SaveChanges();
         }
     }
 }

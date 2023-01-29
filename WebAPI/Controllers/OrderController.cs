@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
 
         [HttpPost(Name = "InsertOrder")]
 
-        public int Post([FromBody] OrderEntity order)
+        public int Post([FromBody]OrderEntity order)
         {
             return _orderService.InsertOrder(order);
         }

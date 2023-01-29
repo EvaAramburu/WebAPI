@@ -1,4 +1,5 @@
 ﻿using Entities.Entities;
+using Resources;
 
 namespace WebAPI.IService
 {
@@ -6,5 +7,7 @@ namespace WebAPI.IService
     {
         int InsertUser(UserEntity user);
         List<UserEntity> GetAllUsers();
+        List<UserEntity> GetSelectedUser(UserFilter userFilter);
+        void DeactivateUser(int id);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Entities.Entities;
 using Logic.ILogic;
 using Logic.Logic;
+using Resources;
 using WebAPI.IService;
 
 namespace WebAPI.Service
@@ -21,5 +22,15 @@ namespace WebAPI.Service
         {
             return _userLogic.GetAllUsers();
         }
+
+        public List<UserEntity> GetSelectedUser(UserFilter userFilter)
+        {
+            return _userLogic.GetSelectedUser(userFilter);
+        }
+        public void DeactivateUser(int id)
+        {
+            _userLogic.DeactivateUser(id);
+        }
+
     }
 }

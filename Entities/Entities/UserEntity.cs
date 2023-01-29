@@ -21,7 +21,7 @@ namespace Entities.Entities
         public DateTime Birthday { get; set; }
         public DateTime AddedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
-        public bool IsActive { get; private set; }
+        public bool IsActive { get; set; }
         public int Rol { get; private set; }
         private string Password { get; set; }
         private string EncryptedPassword { get; set; }

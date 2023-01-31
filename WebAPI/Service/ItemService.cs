@@ -1,5 +1,6 @@
 ﻿using Entities.Entities;
 using Logic.ILogic;
+using Resources.Requests;
 using WebAPI.IService;
 
 namespace WebAPI.Service
@@ -12,10 +13,12 @@ namespace WebAPI.Service
         {
             _itemLogic = itemLogic; 
         }
-        public int InsertItemEntity(ItemEntity itemEntity)
+        public int InsertItemEntity(ItemRequest itemRequest)
         {
-            _itemLogic.InsertItemEntity(itemEntity);
-            return itemEntity.Id;
+            var newItemRequest = itemRequest.ToItemEntity();
+            return _itemLogic.InsertItemEntity(newItemRequest);
+
+
         }
 
         public List<ItemEntity> GetAllItems()
@@ -25,5 +28,21 @@ namespace WebAPI.Service
 
             return _itemLogic.GetAllItems();
         }
+
+        List<ItemEntity> IItemService.GetSelectedItem(int id)
+        {
+            return _itemLogic.GetSelectedItem(id);
+        }
+
+        void IItemService.DeactivateItem(int id)
+        {
+            _itemLogic.DeactivateItem(id);
+        }
+
+        void IItemService.DeleteItem(int id)
+        {
+            _itemLogic.DeleteItem(id);
+        }
+
     }
 }

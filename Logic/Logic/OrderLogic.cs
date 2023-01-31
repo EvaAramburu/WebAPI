@@ -23,6 +23,30 @@ namespace Logic.Logic
             {
                 return _serviceContext.Set<OrderEntity>().ToList();
             }
+
+        void IOrderLogic.DeactivateOrder(int id)
+        {
+            var orderToDeactivate = _serviceContext.Set<OrderEntity>()
+           .Where(o => o.Id == id).First();
+
+            orderToDeactivate.IsActive = false;
+
+            _serviceContext.SaveChanges();
+        }
+        void IOrderLogic.DeleteOrder(int id)
+        { 
+            _serviceContext.Orders.Remove(_serviceContext.Set<OrderEntity>().Where(o => o.Id == id).First());
+
+            _serviceContext.SaveChanges();
+
+        }
+
+        List<OrderEntity> IOrderLogic.GetSelectedOrder(int id)
+        {
+            var selectedOrder = _serviceContext.Set<OrderEntity>()
+               .Where(o => o.Id == id).ToList();
+            return selectedOrder;
+        }
     }
  }
 

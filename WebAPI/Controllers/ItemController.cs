@@ -1,5 +1,6 @@
 ﻿using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Resources.Requests;
 using WebAPI.IService;
 
 namespace WebAPI.Controllers
@@ -18,9 +19,9 @@ namespace WebAPI.Controllers
         }
         [HttpPost(Name = "InsertItem")]
 
-        public int Post([FromBody]ItemEntity itemEntity)
+        public int Post([FromBody]ItemRequest itemRequest)
         {
-            return _itemService.InsertItemEntity(itemEntity);
+            return _itemService.InsertItemEntity(itemRequest);
         }
 
         [HttpGet(Name = "GetAllItems")]
@@ -28,6 +29,25 @@ namespace WebAPI.Controllers
         {
             return _itemService.GetAllItems();
         }
-     }
+        [HttpGet(Name = "GetSelectedItem")]
+        public List<ItemEntity> GetSelectedItem([FromQuery] int id)
+        {
+            return _itemService.GetSelectedItem(id);
+        }
+
+        [HttpDelete(Name = "DeactivateItem")]
+
+        public void DeactivateItem([FromQuery] int id)
+        {
+            _itemService.DeactivateItem(id);
+        }
+
+        [HttpDelete(Name = "DeleteItem")]
+
+        public void DeleteItem([FromQuery] int id)
+        {
+            _itemService.DeleteItem(id);
+        }
+    }
 
 }

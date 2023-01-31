@@ -1,6 +1,7 @@
 ﻿using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Resources;
+using Resources.Requests;
 using System.Security.Authentication;
 using WebAPI.IService;
 
@@ -20,9 +21,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost(Name = "InsertUser")]
-        public int Post([FromBody] UserEntity user)
+        public int Post([FromBody] UserRequest userRequest)
         {
-            return _userService.InsertUser(user);
+            return _userService.InsertUser(userRequest);
         }
 
         [HttpGet(Name = "GetAllUsers")]
@@ -74,6 +75,12 @@ namespace WebAPI.Controllers
 
         }
 
+        //[HttpPatch(Name = "UpdateUser")]
+
+        //public void UpdateUser(int id, [FromBody] UserEntity user)
+        //{
+        //    _userService.UpdateUser(user);
+        //}
         
     }
 }

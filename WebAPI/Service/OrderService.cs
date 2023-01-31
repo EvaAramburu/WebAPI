@@ -23,5 +23,17 @@ namespace WebAPI.Service
         {
             return _orderLogic.GetAllOrders();
         }
+        public List<OrderEntity> GetSelectedOrder(int id)
+        {
+            return _orderLogic.GetSelectedOrder(id);
+        }
+        public void DeactivateOrder(int id)
+        {
+            _orderLogic.DeactivateOrder(id);
+        }
+        public void DeleteOrder(int id)
+        {
+            _orderLogic.DeleteOrder(id);
+        }
     }
 }

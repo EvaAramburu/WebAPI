@@ -2,6 +2,7 @@
 using Logic.ILogic;
 using Logic.Logic;
 using Resources;
+using Resources.Requests;
 using WebAPI.IService;
 
 namespace WebAPI.Service
@@ -13,10 +14,14 @@ namespace WebAPI.Service
         {
             _userLogic = userLogic;
         }
-        public int InsertUser(UserEntity user)
+        public int InsertUser(UserRequest userRequest)
         {
-            _userLogic.InsertUser(user);
-            return user.Id;
+
+            var newUserRequest = userRequest.ToUserEntity();
+            return _userLogic.InsertUser(newUserRequest);
+
+            //_userLogic.InsertUser(user);
+            //return user.Id;
         }
         public List<UserEntity> GetAllUsers()
         {
@@ -35,5 +40,10 @@ namespace WebAPI.Service
         {
             _userLogic.DeleteUser(id);
         }
+
+        //public void UpdateUser(UserEntity user)
+        //{
+        //    _userLogic.UpdateUser(user);
+        //}
     }
 }

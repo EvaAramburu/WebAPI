@@ -1,6 +1,7 @@
 ﻿using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.IService;
+using WebAPI.Service;
 
 namespace WebAPI.Controllers
 {
@@ -29,6 +30,25 @@ namespace WebAPI.Controllers
         public List<OrderEntity> GetAllOrders()
         {
             return _orderService.GetAllOrders();
+        }
+        [HttpGet(Name = "GetSelectedOrder")]
+        public List<OrderEntity> GetSelectedItem([FromQuery] int id)
+        {
+            return _orderService.GetSelectedOrder(id);
+        }
+
+        [HttpDelete(Name = "DeactivateOrder")]
+
+        public void DeactivateOrder([FromQuery] int id)
+        {
+            _orderService.DeactivateOrder(id);
+        }
+
+        [HttpDelete(Name = "DeleteOrder")]
+
+        public void DeleteOrder([FromQuery] int id)
+        {
+            _orderService.DeleteOrder(id);
         }
     }
 }

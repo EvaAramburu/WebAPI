@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,17 +15,25 @@ namespace Entities.Entities
         }
         public int Id { get; set; }
         public Guid IdWeb { get; set; }
-        public string DNI { get; set; }
-        public string Name { get; set; }
+        [Required]
+        public string Document { get; set; }
+        [Required]
+        public string UserName { get; set; }
+        [Required]
         public string UserEmail { get; set; }
         public int Phone { get; set; }
         public DateTime Birthday { get; set; }
-        public DateTime AddedDate { get; set; }
+        //[Required]
+        //public int IdRol { get; set; }
+        [Required]
+        public string Password { get; set; }
+        public DateTime InsertDate { get; set; }
         public DateTime UpdatedDate { get; set; }
         public bool IsActive { get; set; }
-        public int Rol { get; set; }
-        private string Password { get; set; }
-        private string EncryptedPassword { get; set; }
+        
+        
+
+        //public ICollection<OrderEntity> Orders { get; set; }
         
     }
 }

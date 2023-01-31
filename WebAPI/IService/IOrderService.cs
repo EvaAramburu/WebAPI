@@ -6,5 +6,8 @@ namespace WebAPI.IService
     {
         int InsertOrder(OrderEntity order);
         List<OrderEntity> GetAllOrders();
+        List<OrderEntity> GetSelectedOrder(int id);
+        void DeactivateOrder(int id);
+        void DeleteOrder(int id);
     }
 }

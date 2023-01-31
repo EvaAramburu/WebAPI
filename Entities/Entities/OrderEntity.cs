@@ -14,15 +14,26 @@ namespace Entities.Entities
         public OrderEntity()
         {
             IsPaid = false; 
-            IsShipped = false; 
+            IsShipped = false;
+            IsActive = true;
         }
         public int Id { get; set; }
         public Guid IdWeb { get; set; }
+        public int ItemId { get; set; }
+        
         public int Amount { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
-        public bool IsPaid { get; private set; }
-        public bool IsShipped { get; private set; }
+        public bool IsPaid { get;  set; }
+        public bool IsShipped { get;  set; }
+        public bool IsActive { get;  set; }
 
+        //public int ProductId { get; set; }
+        //public ItemEntity item { get; set; }
+
+        //public ICollection<BuyerEntity> Buyers { get; set; }
+
+        //public int UserId { get; set; }
+        //public UserEntity Users { get; set; }
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Resources.Filters
 {
-    internal class ItemFilter
+    public class ItemFilter
     {
+        public int Weight { get; set; }
     }
 }

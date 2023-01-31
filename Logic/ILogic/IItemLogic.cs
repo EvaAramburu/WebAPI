@@ -1,4 +1,5 @@
 ﻿using Entities.Entities;
+using Resources.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,11 @@ namespace Logic.ILogic
 {
     public interface IItemLogic
     {
-        void InsertItemEntity(ItemEntity itemEntity);
+        int InsertItemEntity(ItemEntity itemEntity);
         List<ItemEntity> GetAllItems();
+        List<ItemEntity> GetSelectedItem(int id);
+        void DeactivateItem(int id);
+        void DeleteItem(int id);
 
     }
 }

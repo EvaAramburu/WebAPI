@@ -15,10 +15,11 @@ namespace Logic.Logic
     {
         public UserLogic(ServiceContext serviceContext) : base(serviceContext) { }
 
-        public void InsertUser(UserEntity user)
+        public int InsertUser(UserEntity user)
         {
             _serviceContext.Users.Add(user);
             _serviceContext.SaveChanges();
+            return user.Id;
         }
 
         List<UserEntity> IUserLogic.GetAllUsers()
@@ -53,5 +54,27 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
 
         }
+
+        //void IUserLogic.UpdateUser(UserEntity user)
+        //{
+
+        //    var updatedUser = _serviceContext.Users.FirstOrDefault(u => u.Id == id);
+
+        //    if (updatedUser == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+            
+
+        //    return Ok(updatedUser;
+        //}
+
+
+
+
+        //_serviceContext.Users.Update(user);
+        //    _serviceContext.SaveChanges();
+        //}
     }
 }

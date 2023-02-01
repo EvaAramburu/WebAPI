@@ -11,7 +11,7 @@ namespace Resources.Filters
         public OrderFilter()
          {
              IsPaid = true; 
-            IsShipped= true;
+            IsShipped= false;
          }
     
         public bool IsPaid { get; set; }

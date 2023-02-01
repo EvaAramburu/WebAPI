@@ -1,5 +1,6 @@
 ﻿using Entities.Entities;
 using Logic.ILogic;
+using Resources.Filters;
 using WebAPI.IService;
 
 namespace WebAPI.Service
@@ -35,5 +36,10 @@ namespace WebAPI.Service
         {
             _orderLogic.DeleteOrder(id);
         }
+
+        //public List<OrderEntity> GetPendingShippingOrders(OrderFilter orderFilter)
+        //{
+        //    return _orderLogic.GetPendingShippingOrders(orderFilter);
+        //}
     }
 }

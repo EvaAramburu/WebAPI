@@ -18,6 +18,7 @@ namespace Data
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<AdminEntity> Admins { get; set; }
         public DbSet<BuyerEntity> Buyers { get; set; }
+        public DbSet<UserRol> UserRol { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<ItemEntity>(entity =>
@@ -25,9 +26,11 @@ namespace Data
                 entity.ToTable("Items");
 
             });
-            builder.Entity<OrderEntity>(entity =>
+            builder.Entity<OrderEntity>(order =>
             {
-                entity.ToTable("Orders");
+                order.ToTable("Orders");
+                //order.HasOne<ItemEntity>().WithMany().HasForeignKey(o => o.ItemId);
+                //order.HasOne<BuyerEntity>().WithMany().HasForeignKey(o => o.BuyerId);
 
             });
             builder.Entity<UserEntity>(entity =>
@@ -42,6 +45,11 @@ namespace Data
             builder.Entity<BuyerEntity>(entity =>
             {
                 entity.ToTable("Buyers");
+
+            });
+            builder.Entity<UserRol>(entity =>
+            {
+                entity.ToTable("UserRol");
 
             });
         }

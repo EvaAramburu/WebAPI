@@ -41,9 +41,9 @@ namespace WebAPI.Service
             _userLogic.DeleteUser(id);
         }
 
-        //public void UpdateUser(UserEntity user)
-        //{
-        //    _userLogic.UpdateUser(user);
-        //}
+        public void UpdateUser(int id, UserEntity user)
+        {
+            _userLogic.UpdateUser(id, user);
+        }
     }
 }

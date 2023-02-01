@@ -21,5 +21,14 @@ namespace Logic.Logic
         {
             return _serviceContext.Set<AdminEntity>().ToList();
         }
+        void IAdminLogic.DeactivateAdmin(int id) 
+        {
+            var adminToDeactivate = _serviceContext.Set<AdminEntity>().Where(a => a.Id == id).First();
+            adminToDeactivate.IsActive = false;
+
+            _serviceContext.SaveChanges();
+
+        }
+
     }
 }

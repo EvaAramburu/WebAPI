@@ -33,5 +33,12 @@ namespace WebAPI.Controllers
             return _buyerService.GetAllBuyers();
         }
 
+        [HttpDelete(Name = "DeactivateBuyer")]
+
+        public void DeactivateBuyer([FromQuery] int id)
+        {
+            _buyerService.DeactivateBuyer(id);
+        }
+
     }
 }

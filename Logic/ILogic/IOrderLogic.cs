@@ -1,4 +1,5 @@
 ﻿using Entities.Entities;
+using Resources.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,11 @@ namespace Logic.ILogic
 {
     public interface IOrderLogic
     {
-        void InsertOrder(OrderEntity order);
+        int InsertOrder(OrderEntity order);
         List<OrderEntity> GetAllOrders();
         List<OrderEntity> GetSelectedOrder(int id);
         void DeactivateOrder(int id);
         void DeleteOrder(int id);
+        //List<OrderEntity> GetPendingShippingOrders(OrderFilter orderFilter);
     }
 }

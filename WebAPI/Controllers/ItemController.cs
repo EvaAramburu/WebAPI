@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
         }
         [HttpPost(Name = "InsertItem")]
 
-        public int Post([FromBody]ItemRequest itemRequest)
+        public int InsertItemEntity([FromBody]ItemRequest itemRequest)
         {
             return _itemService.InsertItemEntity(itemRequest);
         }

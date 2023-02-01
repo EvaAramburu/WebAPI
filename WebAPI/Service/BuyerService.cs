@@ -22,5 +22,10 @@ namespace WebAPI.Service
         {
             return _buyerLogic.GetAllBuyers();
         }
+
+        public void DeactivateBuyer(int id)
+        {
+            _buyerLogic.DeactivateBuyer(id);
+        }
     }
 }

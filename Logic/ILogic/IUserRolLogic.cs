@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Logic.ILogic
 {
-    public interface IAdminLogic
+    public interface IUserRolLogic
     {
-        void InsertAdmin(AdminEntity admin);
-        List<AdminEntity> GetAllAdmins();
-        void DeactivateAdmin(int id);
+        int InsertUserRol(UserRol userRol);
     }
 }

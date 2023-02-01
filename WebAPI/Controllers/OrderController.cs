@@ -1,5 +1,6 @@
 ﻿using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Resources.Filters;
 using WebAPI.IService;
 using WebAPI.Service;
 
@@ -20,7 +21,7 @@ namespace WebAPI.Controllers
 
         [HttpPost(Name = "InsertOrder")]
 
-        public int Post([FromBody]OrderEntity order)
+        public int InsertOrder([FromBody]OrderEntity order)
         {
             return _orderService.InsertOrder(order);
         }
@@ -50,5 +51,12 @@ namespace WebAPI.Controllers
         {
             _orderService.DeleteOrder(id);
         }
+
+        //[HttpGet(Name = "GetPendingShippingOrders")]
+
+        //public List<OrderEntity> GetPendingShippingOrders([FromQuery] OrderFilter orderFilter)
+        //{
+        //    return _orderService.GetPendingShippingOrders(orderFilter);
+        //}
     }
 }

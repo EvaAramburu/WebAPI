@@ -21,5 +21,13 @@ namespace Logic.Logic
         {
             return _serviceContext.Set<BuyerEntity>().ToList();
         }
+
+         void IBuyerLogic.DeactivateBuyer(int id)
+        {
+            var buyerToDeactivate = _serviceContext.Set <BuyerEntity>().Where(b => b.Id == id).First();
+            buyerToDeactivate.IsActive = false; 
+            _serviceContext.SaveChanges();
+        }
+
     }
 }

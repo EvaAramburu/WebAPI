@@ -23,5 +23,9 @@ namespace WebAPI.Service
         {
             return _adminLogic.GetAllAdmins();
         }
+        public void DeactivateAdmin(int id)
+        {
+            _adminLogic.DeactivateAdmin(id);
+        }
     }
 }

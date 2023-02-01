@@ -28,5 +28,11 @@ namespace WebAPI.Controllers
         {
             return _adminService.GetAllAdmins();
         }
+
+        [HttpDelete(Name = "DeactivateAdmin")]
+        public void DeactivateAdmin([FromQuery] int id)
+        {
+            _adminService.DeactivateAdmin(id);
+        }
     }
 }

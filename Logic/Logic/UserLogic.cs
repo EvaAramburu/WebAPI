@@ -1,11 +1,14 @@
 ﻿using Data;
 using Entities.Entities;
 using Logic.ILogic;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -50,31 +53,38 @@ namespace Logic.Logic
             //var userToDelete = _serviceContext.Set<UserEntity>().Where(u => u.Id == id).First();
 
             _serviceContext.Users.Remove(_serviceContext.Set<UserEntity>().Where(u => u.Id == id).First());
-           
+
             _serviceContext.SaveChanges();
 
         }
 
-        //void IUserLogic.UpdateUser(UserEntity user)
-        //{
-
-        //    var updatedUser = _serviceContext.Users.FirstOrDefault(u => u.Id == id);
-
-        //    if (updatedUser == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-            
-
-        //    return Ok(updatedUser;
-        //}
+        void IUserLogic.UpdateUser(int id, UserEntity user)
+        {
+            _serviceContext.Users.Update(user);
+            _serviceContext.SaveChanges();
 
 
 
+            //{
 
-        //_serviceContext.Users.Update(user);
-        //    _serviceContext.SaveChanges();
-        //}
+            //    var updatedUser = _serviceContext.Users.FirstOrDefault(u => u.Id == id);
+
+            //    if (updatedUser == null)
+            //    {
+            //        return NotFound();
+            //    }
+
+
+
+            //    return Ok(updatedUser;
+            //}
+
+
+
+
+            //_serviceContext.Users.Update(user);
+
+            //}
+        }
     }
 }

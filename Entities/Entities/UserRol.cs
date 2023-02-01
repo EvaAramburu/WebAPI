@@ -11,8 +11,6 @@ namespace Entities.Entities
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public DateTime InsertDate { get; set; }
-        public DateTime UpdateDate { get; set; }
-        public bool IsActive { get; set; }
+        public string Permissions { get; set; }
     }
 }

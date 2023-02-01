@@ -1,4 +1,5 @@
 ﻿using Entities.Entities;
+using Resources.Filters;
 
 namespace WebAPI.IService
 {
@@ -9,5 +10,6 @@ namespace WebAPI.IService
         List<OrderEntity> GetSelectedOrder(int id);
         void DeactivateOrder(int id);
         void DeleteOrder(int id);
+        //List<OrderEntity> GetPendingShippingOrders(OrderFilter orderFilter);
     }
 }

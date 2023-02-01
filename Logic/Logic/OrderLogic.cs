@@ -1,6 +1,7 @@
 ﻿using Data;
 using Entities.Entities;
 using Logic.ILogic;
+using Resources.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,11 @@ namespace Logic.Logic
     {
     public OrderLogic(ServiceContext serviceContext) : base(serviceContext) { }
 
-        public void InsertOrder(OrderEntity order)
+        public int InsertOrder(OrderEntity order)
             {
                 _serviceContext.Orders.Add(order);
                 _serviceContext.SaveChanges();
+                return order.Id; 
             }
 
             List<OrderEntity> IOrderLogic.GetAllOrders()
@@ -47,6 +49,23 @@ namespace Logic.Logic
                .Where(o => o.Id == id).ToList();
             return selectedOrder;
         }
+
+        //List<OrderEntity> IOrderLogic.GetPendingShippingOrders(OrderFilter orderFilter)
+        //{
+        //    var PendingShipping = _serviceContext.Set<OrderEntity>();
+
+        //    if (orderFilter.IsPaid == true)
+        //    {
+        //        PendingShipping = PendingShipping.Where(o => o.IsPaid == true);
+        //    }
+
+        //    if (orderFilter.IsShipped == false)
+        //    {
+        //        PendingShipping = PendingShipping.Where(o => o.IsShipped == false);
+        //    }
+
+        //    return PendingShipping.ToList();
+        //}
     }
  }
 

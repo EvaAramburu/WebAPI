@@ -12,7 +12,7 @@ namespace Entities.Entities
     {
     public AdminEntity() { }
 
-        //public int Id { get; set; }
+    
 
     public int UserId { get; set; }
     public int IdRol { get; set; }

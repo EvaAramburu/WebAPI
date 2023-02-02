@@ -14,31 +14,20 @@ namespace WebAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        private ISecurityService _securityService;
-        private ISecurityService? securityService;
+        //private ISecurityService _securityService;
+        //private ISecurityService? securityService;
 
-        public UserController(ISecurityService security, IUserService userService)
+        public UserController(IUserService userService)
         {
-            _securityService = securityService;
+            //_securityService = securityService;
             _userService = userService;
             
         }
 
         [HttpPost(Name = "InsertUser")]
-        public int InsertUser([FromHeader] string userName, [FromHeader] string userPassword, [FromBody] UserRequest userRequest)
+        public int InsertUser([FromBody] UserRequest userRequest)
         {
-
-            var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
-            if (validCredentials == true)
-            {
                 return _userService.InsertUser(userRequest);
-            }
-            else
-            {
-                throw new InvalidCredentialException();
-            }
-
-            
         }
 
         [HttpGet(Name = "GetAllUsers")]
@@ -48,7 +37,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet(Name = "GetSelectedUser")]
-        public List<UserEntity> GetSelectedUser([FromHeader] string userName, [FromHeader] string userPassword, [FromQuery] int id)
+        public List<UserEntity> GetSelectedUser([FromQuery] int id)
         {
             //var selectedItems = _serviceContext.Set<ItemEntity>().Where(i => i.IsActive).ToList();
 
@@ -66,7 +55,7 @@ namespace WebAPI.Controllers
 
         [HttpDelete(Name = "DeactivateUser")]
 
-        public void DeactivateUser([FromHeader] string userName, [FromHeader] string userPassword, [FromQuery] int id)
+        public void DeactivateUser([FromQuery] int id)
         {
 
             //var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
@@ -84,7 +73,7 @@ namespace WebAPI.Controllers
 
         [HttpDelete(Name = "DeleteUser")]
 
-        public void DeleteUser([FromHeader] string userName, [FromHeader] string userPassword, [FromQuery] int id)
+        public void DeleteUser([FromQuery] int id)
         {
             _userService.DeleteUser(id);
 
@@ -92,14 +81,9 @@ namespace WebAPI.Controllers
 
         [HttpPatch(Name = "UpdateUser")]
 
-        //public void UpdateUser(int id, [FromBody] UserEntity user)
-        //{
-        //    _userService.UpdateUser(user);
-        //}
-
-        public void UpdateUser(int id, UserEntity user)
+        public void UpdateUser(UserEntity user)
         {
-            _userService.UpdateUser(id, user);
+            _userService.UpdateUser(user);
         }
     }
 }

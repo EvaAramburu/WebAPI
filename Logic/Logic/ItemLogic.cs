@@ -69,5 +69,13 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
 
         }
+
+        void IItemLogic.UpdateItem(ItemEntity itemEntity)
+        {
+            _serviceContext.Items.Update(itemEntity);
+            _serviceContext.SaveChanges();
+
+        }
+       
     }
 }

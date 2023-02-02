@@ -14,6 +14,12 @@ namespace WebAPI.Service
         {
             _userRolLogic = userRolLogic;
         }
+
+        public List<UserRol> GetAllUserRol()
+        {
+            return _userRolLogic.GetAllUserRol();
+        }
+
         int IUserRolService.InsertUserRol(UserRol userRol)
         {
             _userRolLogic.InsertUserRol(userRol);

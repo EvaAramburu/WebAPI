@@ -6,5 +6,6 @@ namespace WebAPI.IService
     public interface IUserRolService
     {
         int InsertUserRol(UserRol userRol);
+        List<UserRol> GetAllUserRol();
     }
 }

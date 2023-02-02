@@ -1,6 +1,7 @@
 ﻿using Entities.Entities;
 using Logic.ILogic;
 using Logic.Logic;
+using Resources.Requests;
 using WebAPI.IService;
 
 namespace WebAPI.Service
@@ -13,10 +14,10 @@ namespace WebAPI.Service
         {
             _adminLogic= adminLogic;
         }
-        public int InsertAdmin(AdminEntity admin)
+        public int InsertAdmin(AdminRequest adminRequest)
         {
-            _adminLogic.InsertAdmin(admin);
-            return admin.Id;
+            var newAdminRequest = adminRequest.ToAdminEntity();
+            return _adminLogic.InsertAdmin(newAdminRequest);
         }
 
         public List<AdminEntity> GetAllAdmins()

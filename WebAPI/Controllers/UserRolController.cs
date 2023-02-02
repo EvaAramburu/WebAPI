@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Resources.Requests;
 using System.Security.Authentication;
 using WebAPI.IService;
+using WebAPI.Service;
 
 namespace WebAPI.Controllers
 {
@@ -21,20 +22,25 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost(Name = "InsertUserRol")]
-        public int InsertUserRol([FromHeader] string userName, [FromHeader] string userPassword, [FromBody] UserRol userRol)
+        public int InsertUserRol(UserRol userRol)
         {
 
-            var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
-            if (validCredentials == true)
-            {
+            //var validCredentials = _securityService.ValidateUserCredentials(userName, userPassword, 1);
+            //if (validCredentials == true)
+            //{
                 return _userRolService.InsertUserRol(userRol);
-            }
-            else
-            {
-                throw new InvalidCredentialException();
-            }
+            //}
+            //else
+            //{
+            //    throw new InvalidCredentialException();
+            //}
+        }
 
-
+        [HttpGet(Name = "GetAllUserRol")]
+        public List<UserRol> GetAllUserRol()
+        {
+            return _userRolService.GetAllUserRol();
         }
     }
+
 }

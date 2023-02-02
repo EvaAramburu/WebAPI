@@ -1,5 +1,6 @@
 ﻿using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Resources.Requests;
 using WebAPI.IService;
 
 namespace WebAPI.Controllers
@@ -18,9 +19,9 @@ namespace WebAPI.Controllers
         }
         [HttpPost(Name = "InsertAdmin")]
 
-        public int Post([FromBody] AdminEntity admin)
+        public int InsertAdmin([FromBody] AdminRequest adminRequest)
         {
-            return _adminService.InsertAdmin(admin);
+            return _adminService.InsertAdmin(adminRequest);
         }
 
         [HttpGet(Name = "GetAllAdmins")]

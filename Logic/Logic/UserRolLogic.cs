@@ -18,5 +18,10 @@ namespace Logic.Logic
             _serviceContext.SaveChanges();
             return userRol.Id; 
         }
+
+        List<UserRol> IUserRolLogic.GetAllUserRol()
+        {
+            return _serviceContext.Set<UserRol>().ToList();
+        }
     }
 }

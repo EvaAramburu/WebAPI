@@ -58,7 +58,7 @@ namespace Logic.Logic
 
         }
 
-        void IUserLogic.UpdateUser(int id, UserEntity user)
+        void IUserLogic.UpdateUser( UserEntity user)
         {
             _serviceContext.Users.Update(user);
             _serviceContext.SaveChanges();

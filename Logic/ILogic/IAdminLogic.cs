@@ -1,4 +1,5 @@
 ﻿using Entities.Entities;
+using Resources.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Logic.ILogic
 {
     public interface IAdminLogic
     {
-        void InsertAdmin(AdminEntity admin);
+        int InsertAdmin(AdminEntity admin);
         List<AdminEntity> GetAllAdmins();
         void DeactivateAdmin(int id);
     }

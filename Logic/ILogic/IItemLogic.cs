@@ -15,6 +15,7 @@ namespace Logic.ILogic
         List<ItemEntity> GetSelectedItem(int id);
         void DeactivateItem(int id);
         void DeleteItem(int id);
+        void UpdateItem(ItemEntity itemEntity);
 
     }
 }

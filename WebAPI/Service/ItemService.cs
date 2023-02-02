@@ -44,5 +44,10 @@ namespace WebAPI.Service
             _itemLogic.DeleteItem(id);
         }
 
+        void IItemService.UpdateItem(ItemEntity itemEntity)
+        {
+            _itemLogic.UpdateItem(itemEntity);
+        }
+
     }
 }

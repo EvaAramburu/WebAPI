@@ -15,6 +15,6 @@ namespace Logic.ILogic
         List<UserEntity> GetSelectedUser(int id);
         void DeactivateUser(int id);
         void DeleteUser(int id);
-        void UpdateUser(int id, UserEntity user);
+        void UpdateUser(UserEntity user);
     }
 }

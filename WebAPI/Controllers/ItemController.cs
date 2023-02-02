@@ -48,6 +48,12 @@ namespace WebAPI.Controllers
         {
             _itemService.DeleteItem(id);
         }
+
+        [HttpPatchAttribute(Name = "UpdateItem")]
+        public void UpdateItem(ItemEntity itemEntity)
+        {
+            _itemService.UpdateItem(itemEntity);
+        }
     }
 
 }

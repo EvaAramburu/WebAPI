@@ -20,8 +20,6 @@ namespace WebAPI.Service
             var newUserRequest = userRequest.ToUserEntity();
             return _userLogic.InsertUser(newUserRequest);
 
-            //_userLogic.InsertUser(user);
-            //return user.Id;
         }
         public List<UserEntity> GetAllUsers()
         {
@@ -41,9 +39,9 @@ namespace WebAPI.Service
             _userLogic.DeleteUser(id);
         }
 
-        public void UpdateUser(int id, UserEntity user)
+        public void UpdateUser(UserEntity user)
         {
-            _userLogic.UpdateUser(id, user);
+            _userLogic.UpdateUser(user);
         }
     }
 }

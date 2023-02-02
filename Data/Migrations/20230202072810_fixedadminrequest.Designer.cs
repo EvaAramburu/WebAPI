@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ServiceContext))]
-    [Migration("20230130141820_initial")]
-    partial class initial
+    [Migration("20230202072810_fixedadminrequest")]
+    partial class fixedadminrequest
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -80,6 +80,9 @@ namespace Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BuyerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DeliveryDate")
@@ -157,6 +160,31 @@ namespace Data.Migrations
                     b.UseTptMappingStrategy();
                 });
 
+            modelBuilder.Entity("Entities.Entities.UserRol", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Permissions")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserRol", (string)null);
+                });
+
             modelBuilder.Entity("Entities.Entities.AdminEntity", b =>
                 {
                     b.HasBaseType("Entities.Entities.UserEntity");
@@ -169,15 +197,15 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IdPerson")
-                        .HasColumnType("int");
-
                     b.Property<int>("IdRol")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.ToTable("Admins", (string)null);
                 });
@@ -189,9 +217,6 @@ namespace Data.Migrations
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdRol")
-                        .HasColumnType("int");
 
                     b.ToTable("Buyers", (string)null);
                 });

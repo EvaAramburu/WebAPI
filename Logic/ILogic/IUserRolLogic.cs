@@ -10,5 +10,6 @@ namespace Logic.ILogic
     public interface IUserRolLogic
     {
         int InsertUserRol(UserRol userRol);
+        List<UserRol> GetAllUserRol();
     }
 }

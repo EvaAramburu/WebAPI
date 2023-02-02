@@ -157,6 +157,31 @@ namespace Data.Migrations
                     b.UseTptMappingStrategy();
                 });
 
+            modelBuilder.Entity("Entities.Entities.UserRol", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Permissions")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserRol", (string)null);
+                });
+
             modelBuilder.Entity("Entities.Entities.AdminEntity", b =>
                 {
                     b.HasBaseType("Entities.Entities.UserEntity");
@@ -189,9 +214,6 @@ namespace Data.Migrations
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdRol")
-                        .HasColumnType("int");
 
                     b.ToTable("Buyers", (string)null);
                 });

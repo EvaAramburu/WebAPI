@@ -1,5 +1,6 @@
 ﻿using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Resources.Filters;
 using Resources.Requests;
 using WebAPI.IService;
 
@@ -35,6 +36,12 @@ namespace WebAPI.Controllers
             return _itemService.GetSelectedItem(id);
         }
 
+        [HttpGet(Name = "GetItemByBrand")]
+        public List<ItemEntity> GetItemByBrand([FromQuery] string brand)
+        {
+            return _itemService.GetItemByBrand(brand);
+        }
+
         [HttpDelete(Name = "DeactivateItem")]
 
         public void DeactivateItem([FromQuery] int id)
@@ -49,7 +56,7 @@ namespace WebAPI.Controllers
             _itemService.DeleteItem(id);
         }
 
-        [HttpPatchAttribute(Name = "UpdateItem")]
+        [HttpPatch(Name = "UpdateItem")]
         public void UpdateItem(ItemEntity itemEntity)
         {
             _itemService.UpdateItem(itemEntity);

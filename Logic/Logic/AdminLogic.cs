@@ -17,7 +17,7 @@ namespace Logic.Logic
         {
             _serviceContext.Admins.Add(admin);
             _serviceContext.SaveChanges();
-            return admin.UserId;
+            return admin.Id;
         }
         List<AdminEntity> IAdminLogic.GetAllAdmins()
         {

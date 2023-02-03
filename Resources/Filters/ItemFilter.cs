@@ -8,6 +8,6 @@ namespace Resources.Filters
 {
     public class ItemFilter
     {
-        public int Weight { get; set; }
+        public string Brand { get; set; }
     }
 }

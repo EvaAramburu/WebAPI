@@ -11,5 +11,6 @@ namespace WebAPI.IService
         void DeactivateOrder(int id);
         void DeleteOrder(int id);
         //List<OrderEntity> GetPendingShippingOrders(OrderFilter orderFilter);
+        void UpdateOrder(OrderEntity order);
     }
 }

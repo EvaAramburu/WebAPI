@@ -8,17 +8,21 @@ using System.Threading.Tasks;
 
 namespace Entities.Entities
 {
-    public class BuyerEntity : UserEntity 
+    public class BuyerEntity  
     {
-        public BuyerEntity() { }
+        public BuyerEntity() {
+            IsActive = true;
+        }
 
-        //public int Id { get; set; }
-        //public int IdRol { get; set; }
+        public int Id { get; set; }
+        public int IdRol { get; set; }
         public string UserName { get; set; }
         public string Address { get; set; }
+        public int OrderId { get; set; }
+        public bool IsActive { get; set; }
 
-        //public int OrderId { get; set; }
- 
+
+
 
     }
 }

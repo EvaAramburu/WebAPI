@@ -37,6 +37,10 @@ namespace WebAPI.Service
             _orderLogic.DeleteOrder(id);
         }
 
+        public void UpdateOrder(OrderEntity order)
+        {
+            _orderLogic.UpdateOrder(order);
+        }
         //public List<OrderEntity> GetPendingShippingOrders(OrderFilter orderFilter)
         //{
         //    return _orderLogic.GetPendingShippingOrders(orderFilter);

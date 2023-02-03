@@ -1,5 +1,6 @@
 ﻿using Entities.Entities;
 using Logic.ILogic;
+using Resources.Filters;
 using Resources.Requests;
 using WebAPI.IService;
 
@@ -47,6 +48,11 @@ namespace WebAPI.Service
         void IItemService.UpdateItem(ItemEntity itemEntity)
         {
             _itemLogic.UpdateItem(itemEntity);
+        }
+
+        List<ItemEntity> IItemService.GetItemByBrand(string brand)
+        {
+            return _itemLogic.GetItemByBrand(brand);
         }
 
     }

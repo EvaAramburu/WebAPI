@@ -18,14 +18,14 @@ namespace Entities.Entities
         
         public string Document { get; set; }
         
-        public string UserName { get; set; }
+        public string Name { get; set; }
         
         public string UserEmail { get; set; }
         public int Phone { get; set; }
         public DateTime Birthday { get; set; }
         //public int IdRol { get; set; }
         [Required]
-        public string Password { get; set; }
+        public string password { get; set; }
         public DateTime InsertDate { get; set; }
         public DateTime UpdatedDate { get; set; }
         public bool IsActive { get; set; } 

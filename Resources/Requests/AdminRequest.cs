@@ -21,7 +21,6 @@ namespace Resources.Requests
             admin.Name = Name;
             admin.CompanyName = CompanyName;
             admin.CompanyEmail = CompanyEmail;
-            
 
             admin.IdRol = 1; 
 

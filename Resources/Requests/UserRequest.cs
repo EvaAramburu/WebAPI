@@ -12,10 +12,11 @@ namespace Resources.Requests
     {
         
         public string Document { get; set; }
-        public string UserName { get; set; }
+        public string Name { get; set; }
         public string UserEmail { get; set; }
-        public int Phone { get; set; }
         public DateTime Birthday { get; set; }
+        public int Phone { get; set; }
+        
         //public int IdRol { get; set; }
         public string Password { get; set; }
 
@@ -25,12 +26,12 @@ namespace Resources.Requests
             var user = new UserEntity();
 
          user.Document = Document;
-         user.UserName = UserName;
+         user.Name = Name;
          user.UserEmail = UserEmail;
          user.Birthday = Birthday;
          user.Phone = Phone;
          //user.IdRol = IdRol;
-         user.Password = Password;
+         user.password = Password;
 
 
          user.InsertDate = DateTime.Now;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Logic.ILogic
 {
@@ -16,5 +17,6 @@ namespace Logic.ILogic
         void DeactivateOrder(int id);
         void DeleteOrder(int id);
         //List<OrderEntity> GetPendingShippingOrders(OrderFilter orderFilter);
+        void UpdateOrder(OrderEntity order);
     }
 }

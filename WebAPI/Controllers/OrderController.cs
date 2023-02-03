@@ -52,7 +52,12 @@ namespace WebAPI.Controllers
             _orderService.DeleteOrder(id);
         }
 
-        //[HttpGet(Name = "GetPendingShippingOrders")]
+        [HttpPatch(Name = "UpdateOrder")]
+
+        public void UpdateOrder(OrderEntity order)
+        {
+            _orderService.UpdateOrder(order);
+        }
 
         //public List<OrderEntity> GetPendingShippingOrders([FromQuery] OrderFilter orderFilter)
         //{

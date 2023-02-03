@@ -15,11 +15,11 @@ namespace Logic.Logic
         {
             _serviceContext = serviceContext;
         }
-        public bool ValidateUserCredentials(string userName, string userPassWord, int idRol)
+        public bool ValidateUserCredentials(string userName, string Password)
         {
             var selectedUser = _serviceContext.Set<UserEntity>()
-                                .Where(u => u.UserName == userName
-                                    && u.Password == userPassWord);
+                                .Where(u => u.Name == userName
+                                    && u.password == Password);
                                     //&& u.IdRol == idRol).FirstOrDefault();
 
             if (selectedUser != null)

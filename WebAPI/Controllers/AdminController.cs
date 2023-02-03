@@ -19,9 +19,9 @@ namespace WebAPI.Controllers
         }
         [HttpPost(Name = "InsertAdmin")]
 
-        public int InsertAdmin([FromBody] AdminRequest adminRequest)
+        public int InsertAdmin([FromBody] AdminEntity admin)
         {
-            return _adminService.InsertAdmin(adminRequest);
+            return _adminService.InsertAdmin(admin);
         }
 
         [HttpGet(Name = "GetAllAdmins")]

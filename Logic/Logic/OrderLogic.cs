@@ -66,6 +66,12 @@ namespace Logic.Logic
 
         //    return PendingShipping.ToList();
         //}
+
+        void IOrderLogic.UpdateOrder(OrderEntity order)
+        {
+            _serviceContext.Orders.Update(order);
+            _serviceContext.SaveChanges();
+        }
     }
  }
 

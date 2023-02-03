@@ -19,9 +19,9 @@ namespace Entities.Entities
         }
         public int Id { get; set; }
         public Guid IdWeb { get; set; }
-        public int ItemId { get; set; }
+        //public int ItemId { get; set; }
         public int BuyerId { get; set; }
-        public int Amount { get; set; }
+        public decimal Amount { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
         public bool IsPaid { get;  set; }

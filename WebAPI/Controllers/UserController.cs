@@ -1,4 +1,5 @@
-﻿using Entities.Entities;
+﻿using Azure.Identity;
+using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Resources;
@@ -19,7 +20,7 @@ namespace WebAPI.Controllers
 
         public UserController(IUserService userService)
         {
-            //_securityService = securityService;
+      
             _userService = userService;
             
         }
@@ -27,7 +28,7 @@ namespace WebAPI.Controllers
         [HttpPost(Name = "InsertUser")]
         public int InsertUser([FromBody] UserRequest userRequest)
         {
-                return _userService.InsertUser(userRequest);
+                return _userService.InsertUser(userRequest);  
         }
 
         [HttpGet(Name = "GetAllUsers")]

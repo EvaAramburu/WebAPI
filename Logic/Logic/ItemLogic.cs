@@ -2,6 +2,7 @@
 using Entities.Entities;
 using Logic.ILogic;
 using Microsoft.Extensions.DependencyInjection;
+using Resources.Filters;
 using Resources.Requests;
 using System;
 using System.Collections.Generic;
@@ -74,6 +75,22 @@ namespace Logic.Logic
         {
             _serviceContext.Items.Update(itemEntity);
             _serviceContext.SaveChanges();
+
+        }
+
+        List<ItemEntity> IItemLogic.GetItemByBrand(string brand)
+        {
+            {
+                var brandFilter = new ItemEntity();
+                brandFilter.Brand = brand;
+                var resultList = _serviceContext.Set<ItemEntity>()
+                                    .Where(i => i.Brand == brand);
+                if (brandFilter.Brand == brand)
+                {
+                    resultList = resultList.Where(i => i.Brand == brand);
+                }
+                return resultList.ToList();
+            }
 
         }
        

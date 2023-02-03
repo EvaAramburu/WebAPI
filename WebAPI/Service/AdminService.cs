@@ -14,10 +14,9 @@ namespace WebAPI.Service
         {
             _adminLogic= adminLogic;
         }
-        public int InsertAdmin(AdminRequest adminRequest)
+        public int InsertAdmin(AdminEntity admin)
         {
-            var newAdminRequest = adminRequest.ToAdminEntity();
-            return _adminLogic.InsertAdmin(newAdminRequest);
+            return _adminLogic.InsertAdmin(admin);
         }
 
         public List<AdminEntity> GetAllAdmins()

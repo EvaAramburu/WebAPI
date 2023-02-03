@@ -5,7 +5,7 @@ namespace WebAPI.IService
 {
     public interface IAdminService
     {
-        int InsertAdmin(AdminRequest adminRequest);
+        int InsertAdmin(AdminEntity admin);
         List<AdminEntity> GetAllAdmins();
         void DeactivateAdmin(int id);
     }

@@ -13,9 +13,9 @@ namespace WebAPI.Service
             _securityLogic = securityLogic;
         }
 
-        bool ISecurityService.ValidateUserCredentials(string userName, string userPassWord, int idRol)
+        bool ISecurityService.ValidateUserCredentials(string userName, string Password)
         {
-            return _securityLogic.ValidateUserCredentials(userName, userPassWord, idRol);
+            return _securityLogic.ValidateUserCredentials(userName,Password);
         }
        
     }
